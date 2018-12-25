@@ -8,12 +8,14 @@ body
                 .col-lg
                 .col-lg-6
                     .row
-                        .col-lg-6(v-for="piso in pisos")
+                        .col-lg-6(
+                            v-for="piso in pisos"
+                        )
                             .card
                                 h3.card-header="{{piso.direccion}}"
                                 .card-body
-                                    h5.card-title="Este inmueble cuesta {{piso.renta}}"
-                                        i.fa.fa-euro
+                                    h5.card-title="{{piso.renta}} "
+                                        i.fas.fa-euro-sign
                                     p.card-text="{{piso.descripcion}}"
                                 .card-footer
                                     p.text-center="{{piso.tipo}}"
