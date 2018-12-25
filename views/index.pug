@@ -1,43 +1,23 @@
-doctype html
+include head.pug
+body
+    #app
+        .container-fluid
+            .jumbotron
+                h1.text-center="{{title}}"
+            .row
+                .col-lg
+                .col-lg-6
+                    .row
+                        .col-lg-6(v-for="piso in pisos")
+                            .card
+                                h3.card-header="{{piso.direccion}}"
+                                .card-body
+                                    h5.card-title="Este inmueble cuesta {{piso.renta}}"
+                                        i.fa.fa-euro
+                                    p.card-text="{{piso.descripcion}}"
+                                .card-footer
+                                    p.text-center="{{piso.tipo}}"
 
-html(lang="es")
-  include head.pug
-  body
-      div.container-fluid
-        div.jumbotron
-          h1.text-center="Login"
-        .row
-          .col-lg-12
-            .w-100
-              #app.text-center
-                h1="{{message}}"
-                button.btn.btn-outline-primary(v-on:click="cambiarMessage")="Cambiar"
-        br
-        div.row
-          div.col-lg
-          div.col-lg-6
-            div#form
-              div.row
-                label.col-lg-2(for="email")="Email: "
-                div.col-lg-10
-                  input#email.form-control(
-                    type="email",
-                    placeholder="Email"
-                    name="email"
-                    )
-              br
-              div.row
-                label.col-lg-2(for="pass")="Pass: "
-                div.col-lg-10
-                  input#pass.form-control(
-                    type="password"
-                    placeholder="Password"
-                    name="pass"
-                    )
-              br
-              div.row
-                div.col-lg-12
-                  button#enviar.btn.btn-outline-success.w-100="Enviar"
-          div.col-lg
-      
-      include footer.pug
+                .col-lg
+
+    include footer.pug

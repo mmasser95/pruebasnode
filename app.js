@@ -9,10 +9,14 @@ const pug = require('pug');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/', api);
+app.use('/public', express.static(__dirname+'/views/js'))
 app.set('view engine', 'pug');
 app.get('/login', (req, res) => {
-  res.render('index.pug');
+  res.render('login.pug');
 });
+app.get('/index', (req, res) => {
+  res.render('index.pug')
+})
 
 
 module.exports= app;

@@ -1,11 +1,21 @@
 var app = new Vue({
   el:'#app',
   data:{
-    message:'Hello Vue!'
+    title:"",
+    pisos:[]
   },
   methods:{
-    cambiarMessage:function(event) {
-      this.message=$("#email").val()
+    setTitle:function() {
+      this.title="Index"
+    },
+    getpiso:function(){
+      $.get('/piso', (res) => {
+        this.pisos=res.pisos;
+      })
     }
+  },
+  mounted(){
+    this.setTitle()
+    this.getpiso()
   }
 })
