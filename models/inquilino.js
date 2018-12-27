@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt-nodejs');
 
 const inquilinoSchema = Schema({
-    email={type:String, unique:true, lowercase:true},
-    pass={type:String, select:false},
+    email:{type:String, unique:true, lowercase:true},
+    pass:{type:String, select:false},
     nombre:String,
     apellidos:String,
     nif:String,
