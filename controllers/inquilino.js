@@ -1,3 +1,4 @@
+'use strict'
 const Inquilino = require('../models/inquilino');
 const services = require('../services');
 

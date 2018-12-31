@@ -5,6 +5,7 @@ const userCtrl = require('../controllers/user')
 const router = express.Router();
 const pisoCtrl = require('../controllers/piso');
 const inquilinoCtrl=require('../controllers/inquilino');
+const propietarioCtrl=require('../controllers/propietario')
 const auth = require('../middlewares/auth');
 
 //Piso deprecated
@@ -29,6 +30,12 @@ router.post('/inquilino', inquilinoCtrl.postInquilino);
 router.put('/inquilino/:inquilinoId', inquilinoCtrl.putInquilino);
 router.delete('/inquilino/:inquilinoId'),
 router.post('/inquilino/signin',inquilinoCtrl.signIn);
+
 //propietario
+router.get('/propietario', propietarioCtrl.getPropietarios);
+router.get('/propietario/:propietarioId', propietarioCtrl.getPropietarios);
+router.post('/propietario', propietarioCtrl.postPropietario);
+router.put('/propietario/:propietarioId', propietarioCtrl.putPropietario);
+router.delete('/propietario/:propietarioId', propietarioCtrl.deletePropietario)
 
 module.exports = router;
