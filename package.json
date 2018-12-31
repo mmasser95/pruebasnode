@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+<<<<<<< HEAD
     "dev":"nodemon index.js",
+=======
+    "start-dev": "nodemon index.js",
+>>>>>>> 73618a1d8ebf0dc4871a170930c30ed3eeca0d5a
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Martí Masot",
