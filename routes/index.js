@@ -6,6 +6,7 @@ const router = express.Router();
 const pisoCtrl = require('../controllers/piso');
 const inquilinoCtrl=require('../controllers/inquilino');
 const propietarioCtrl=require('../controllers/propietario')
+const inmuebleCtrl=require('../controllers/inmueble');
 const auth = require('../middlewares/auth');
 
 //Piso deprecated
@@ -22,6 +23,11 @@ router.get('/private',auth, (req,res)=>{
   return res.status(200).send({message:'Tienes acceso'});
 })
 //inmueble
+router.get('/inmueble', inmuebleCtrl.getInmuebles);
+router.get('/inmueble/:inmuebleId', inmuebleCtrl.getInmueble);
+router.post('/inmueble', inmuebleCtrl.postInmueble);
+router.put('/inmueble/:inmuebleId', inmuebleCtrl.putInmueble);
+router.delete('/inmueble/:inmuebleId', inmuebleCtrl.deleteInmueble);
 
 //inquilino
 router.get('/inquilino', inquilinoCtrl.getInquilinos);
