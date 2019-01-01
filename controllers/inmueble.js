@@ -1,7 +1,6 @@
 'use strict'
 
 const Inmueble = require('../models/inmueble');
-const services = require('../services');
 
 function getInmuebles(req,res) {
     console.log('GET /api/inmueble');
@@ -58,9 +57,9 @@ function postInmueble(req,res) {
         multimedia:post.multimedia
     });
 
-    inmueble.save((err,inmueblesaved) => {
+    inmueble.save((err,propietariosaved) => {
         if (err) res.status(500).send({message:`Error al guardar ${err}`});
-        res.status(200).send({message:`Se ha guardado el propietario`, inmueblesaved})
+        res.status(200).send({message:`Se ha guardado el propietario`, propietariosaved})
     });
 }
 
