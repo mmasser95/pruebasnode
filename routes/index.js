@@ -40,7 +40,7 @@ router.post('/inquilino/signin',inquilinoCtrl.signIn);
 
 //propietario
 router.get('/propietario', propietarioCtrl.getPropietarios);
-router.get('/propietario/:propietarioId', propietarioCtrl.getPropietarios);
+router.get('/propietario/:propietarioId', propietarioCtrl.getPropietario);
 router.post('/propietario', propietarioCtrl.postPropietario);
 router.put('/propietario/:propietarioId', propietarioCtrl.putPropietario);
 router.delete('/propietario/:propietarioId', propietarioCtrl.deletePropietario)

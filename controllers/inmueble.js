@@ -57,9 +57,9 @@ function postInmueble(req,res) {
         multimedia:post.multimedia
     });
 
-    inmueble.save((err,propietariosaved) => {
+    inmueble.save((err,inmueblesaved) => {
         if (err) res.status(500).send({message:`Error al guardar ${err}`});
-        res.status(200).send({message:`Se ha guardado el propietario`, propietariosaved})
+        res.status(200).send({message:`Se ha guardado el inmueble`, inmueblesaved})
     });
 }
 
