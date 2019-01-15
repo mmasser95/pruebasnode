@@ -8,6 +8,7 @@ const inquilinoCtrl=require('../controllers/inquilino');
 const propietarioCtrl=require('../controllers/propietario')
 const inmuebleCtrl=require('../controllers/inmueble');
 const reservaCtrl=require('../controllers/reserva');
+const pagoCtrl=require('../controllers/pago');
 const auth = require('../middlewares/auth');
 
 //Piso deprecated
@@ -51,5 +52,12 @@ router.get('/reserva/:reservaId', reservaCtrl.getReserva);
 router.post('/reserva', reservaCtrl.postReserva);
 router.put('/reserva/:reservaId', reservaCtrl.putReserva);
 router.delete('/reserva/:reservaId', reservaCtrl.deleteReserva);
+
+//pago
+router.get('/pago', pagoCtrl.getPagos);
+router.get('/pago/:pagoId', pagoCtrl.getPago);
+router.post('/pago', pagoCtrl.postPago);
+router.put('/pago/:pagoId', pagoCtrl.putPago);
+router.delete('/pago/:pagoId', pagoCtrl.deletePago);
 
 module.exports = router;
