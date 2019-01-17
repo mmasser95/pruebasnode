@@ -44,6 +44,7 @@ function postInquilino(req,res) {
     inquilino.oculto = req.body.oculto
     inquilino.motivo_baja = req.body.motivo_baja
     inquilino.confirmado = req.body.confirmado
+    inquilino.pass=req.body.pass
 
     inquilino.save((err, inquilinosaved) => {
         if (err) res.status(500).send({message:`Error al guardar ${err}`});
